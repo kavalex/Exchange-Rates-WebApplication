@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="EN">
+	<head>
+    	<title>Getting Started: Serving Web Content</title>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style type="text/css">
+			body {background-color: #151515; text-align:center}
+			h1 {background-color:#ff9911}
+			h3 {background-color:#ff0000; color:#ffffff}
+			p {color:#ffffff}
+	    </style>
+    </head>
+    <body>
+    	<form action="/"><button>update</button></form>
+	    <h1>Exchange Rate USD to RUB</h1>
+   	    <h3 th:text="${summaryDynamics}"></h3>
+		<p th:text="${summaryToday}"></p>
+		<p th:text="${summaryYesterday}"></p>
+		<p th:text="${summaryStatus}"></p>
+	    <img th:src="${giphyUrl}" th:alt="${giphyUrl}"/>"
+    </body>
+</html>

@@ -1,5 +1,6 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
-VOLUME /tmp
-ARG JAR_FILE=build/libs/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+RUN addgroup -S alex-app && adduser -S alex-app -G alex-app
+USER alex-app:alex-app
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} alex-app.jar
+ENTRYPOINT ["java","-jar","/alex-app.jar"]
